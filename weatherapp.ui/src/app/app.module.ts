@@ -2,9 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { CityService } from '../services/city.Service';
+
 import { AppComponent } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { CitiesPage } from '../pages/cities/cities';
+import {AddCitiesPage } from '../pages/cities/addCities'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,7 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     AppComponent,
     HomePage,
-    ListPage
+    CitiesPage,
+    AddCitiesPage
   ],
   imports: [
     BrowserModule,
@@ -23,9 +27,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     AppComponent,
     HomePage,
-    ListPage
+    CitiesPage,
+    AddCitiesPage
   ],
   providers: [
+    CityService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

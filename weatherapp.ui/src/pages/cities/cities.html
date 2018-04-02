@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cities</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let city of cities" (click)="cityClicked($event, city)">
+      <div class="item-note">
+        {{city.title}}
+      </div>
+    </button>
+  </ion-list>
+
+  <ion-fab bottom right>
+      <button ion-fab (click)="addCityClicked()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Search Cities</ion-title>
+      <ion-buttons end>
+            <button ion-button (click)="closeModal()">Close</button>
+            </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)"
+    placeholder="Type the name of the city">
+    </ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let searchedCity of searchedCities">
+                <ion-label>{{ searchedCity }}</ion-label>
+                <ion-checkbox item-right></ion-checkbox>  
+        </ion-item>
+    </ion-list>
+
+    <ion-fab bottom right>
+            <button ion-fab (click)="addSelectedCityClicked()"><ion-icon name="arrow-forward"></ion-icon></button>
+          </ion-fab>
+</ion-content>
