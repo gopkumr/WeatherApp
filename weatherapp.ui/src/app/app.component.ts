@@ -9,7 +9,7 @@ import { ListPage } from '../pages/list/list';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class AppComponent {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
@@ -22,7 +22,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Cities', component: ListPage },
+      { title: 'Settings', component: ListPage }
     ];
 
   }
